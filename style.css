@@ -1,0 +1,70 @@
+body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+td{
+    padding: 10px;
+    margin: 0;
+    vertical-align: top;
+}
+.verst{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+tr{
+    margin: 0;
+}
+
+.header{
+    font-family: Arial, monospace;
+    font-size: 12pt;
+    font-style: inherit;
+    color: white;
+}
+.left{
+    text-align: left;
+    vertical-align: bottom;
+}
+
+.right{
+    text-align: right;
+    vertical-align: bottom;
+}
+
+.main-table{
+    margin: 0;
+    border-spacing: 0;
+    border: solid 1px whitesmoke;
+    width: 100%;
+    background: #C8F4CA;
+}
+
+.cell{
+    border: solid 1px whitesmoke;
+    text-align: center;
+}
+
+.first{
+    background: #C8F1F4;
+}
+
+#answer, #first_line{
+    text-align: center;
+    height: 40px;
+}
+
+.send_wrapper{
+    text-align: center;
+}
+
+
+
+
+
