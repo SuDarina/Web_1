@@ -13,7 +13,6 @@
 </head>
 <body>
 <table class="verst">
-<!--    <tr class = "header">-->
     <tr style="background-color:#85C2FF; height: 50px" class = "header">
 
         <td  class="left">
@@ -26,7 +25,6 @@
     </tr>
 
 <!--    фон-->
-<!--    <tr style="height: 80%; border: 2px solid whitesmoke; border-collapse: collapse; background: #ffffff">-->
     <tr style="height: 700px; border: 2px solid whitesmoke; border-collapse: collapse; background: #ffffff">
 <!--        фон-->
 <!--        здесь можно прописать границу между частями страницы-->
@@ -193,10 +191,6 @@
 
         </td>
     </tr>
-<!--    <tr>-->
-<!--        <td colspan="2" style="background-color:#85C2FF;text-align:center; vertical-align: bottom" >-->
-<!--            © Sudarina 2020</td>-->
-<!--    </tr>-->
 </table>
 
 </body>
