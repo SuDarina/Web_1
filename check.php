@@ -12,6 +12,11 @@
             return "no";
         }
     }
+    function checkArea($x, $y, $r){
+        return !in_array($x, array(-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2))
+            || !is_numeric($y) || $y <= -3 || $y >= 3 ||
+            !in_array($r, array(1, 1.5, 2, 2.5, 3));
+    }
     session_start();
     date_default_timezone_set("Europe/Moscow");
     $time = date('d-m-Y H:i:s');
@@ -21,7 +26,14 @@
     $x = str_replace(".", ",", $x1);
 
     $y1 = (double) $_POST["y"];
-    $y = round($y1, 3);
+
+    function customRound($i) {
+        $i *= 1000;
+        $i = floor($i);
+        return $i / 1000;
+    }
+
+    $y = customRound($y1);
     $y = str_replace(".", ",", $y);
 
 
@@ -30,9 +42,13 @@
 
     $res = check($x1, $y1, $r1);
     $benchmark_res = microtime(true) - $start;
-    $benchmark = (number_format($benchmark_res, 10, ".", "")*1000000)." • 10^6";
+    $benchmark = (number_format($benchmark_res, 10, ".", "")*1000000)." • 10";
     $benchmark = str_replace(".",",", $benchmark);
 
+    if (checkArea($x, $y1, $r)) {
+        include "table.php";
+        return;
+    }
 
     $res_arr = array($x, $y, $r, $res, $time, $benchmark);
 
@@ -40,5 +56,5 @@
         $_SESSION['history'] = array();
     }
 
-    array_push($_SESSION['history'], $res_arr);
-    include "table.php";
+        array_push($_SESSION['history'], $res_arr);
+        include "table.php";
